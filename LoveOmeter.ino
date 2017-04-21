@@ -1,4 +1,4 @@
-// still a work in progress, eventualy this thing wont look like the original at all, 
+
 const int sensorPin = A0;
 const int ledpin = 11;
 // room temperature in Celcius
@@ -44,7 +44,102 @@ void loop() {
 
   // if the current temperature is lower than the baseline
   // turn off all LEDs
-  if (temperature < baselineTemp + 1) {
+  //if (temperature < baselineTemp + 1) {
+    //digitalWrite(2, LOW);
+    //digitalWrite(3, LOW);
+    //digitalWrite(4, LOW);
+    //digitalWrite(5, LOW);
+    //digitalWrite(6, LOW);
+    //digitalWrite(7, LOW);
+    //digitalWrite(8, LOW);
+    //digitalWrite(9, LOW);
+  //  digitalWrite(10, LOW);
+ // } // if the temperature lowers 10-12 degrees, turn 1LED on
+   if (temperature >= baselineTemp - 10 && temperature < baselineTemp - 12) {
+    digitalWrite(2, HIGH);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+  } // if the temperature lowers 6-8 degrees, turn 3rd LED on
+  else if (temperature >= baselineTemp - 6 && temperature <= baselineTemp - 8) {
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    } // if the temperature rises more than 3-4 degrees, turn 3 LEDs on
+    // if temperature is 3 -5 degrees below baseline
+      else if (temperature >= baselineTemp - 3 && temperature <= baselineTemp - 5) {
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+
+  } //
+   //if temperature is within 1-2 degrees of baseline temp
+        else if (temperature >= baselineTemp + 2 && temperature < baselineTemp + 3 or temperature <= baselineTemp - 2 && temperature > baselineTemp - 3) {
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+
+  } // if the temperature rises more than 5-6 degrees, turn 5 LEDs
+        else if (temperature >= baselineTemp + 3 && temperature < baselineTemp + 5) {
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+
+  } // if the temperature rises  6-7 degrees, turn 6 LEDs
+        else if (temperature >= baselineTemp + 6 && temperature < baselineTemp + 8) {
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, HIGH);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+
+  } // if the temperature rises  7-8 degrees, turn 7 LEDs
+        else if (temperature >= baselineTemp + 9 && temperature < baselineTemp + 11) {
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, HIGH);
+    digitalWrite(10, LOW);
+
+  } // if the temperature rises 8-9 degrees, turn 8 LEDs
+  else if (temperature >= baselineTemp + 12 && temperature < baselineTemp + 14) {      
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
@@ -53,103 +148,10 @@ void loop() {
     digitalWrite(7, LOW);
     digitalWrite(8, LOW);
     digitalWrite(9, LOW);
-    digitalWrite(10, LOW);
-  } // if the temperature rises 1-2 degrees, turn 1LED on
-  else if (temperature >= baselineTemp + 1 && temperature < baselineTemp + 2) {
-    digitalWrite(2, HIGH);
-    digitalWrite(3, LOW);
-    digitalWrite(4, LOW);
-    digitalWrite(5, LOW);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-    digitalWrite(10, LOW);
-  } // if the temperature rises 2-3 degrees, turn 2 LED on
-  else if (temperature >= baselineTemp + 2 && temperature < baselineTemp + 3) {
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    digitalWrite(4, LOW);
-    digitalWrite(5, LOW);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-    digitalWrite(10, LOW);
-    } // if the temperature rises more than 3-4 degrees, turn 3 LEDs on
-      else if (temperature >= baselineTemp + 3 && temperature < baselineTemp + 4) {
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
-    digitalWrite(5, LOW);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-    digitalWrite(10, LOW);
-
-  } // if the temperature rises more than 4-5 degrees, turn 4 LEDs on
-        else if (temperature >= baselineTemp + 4 && temperature < baselineTemp + 5) {
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
-    digitalWrite(5, HIGH);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-    digitalWrite(10, LOW);
-
-  } // if the temperature rises more than 5-6 degrees, turn 5 LEDs
-        else if (temperature >= baselineTemp + 5 && temperature < baselineTemp + 6) {
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
-    digitalWrite(5, HIGH);
-    digitalWrite(6, HIGH);
-    digitalWrite(7, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-    digitalWrite(10, LOW);
-
-  } // if the temperature rises  6-7 degrees, turn 6 LEDs
-        else if (temperature >= baselineTemp + 6 && temperature < baselineTemp + 7) {
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
-    digitalWrite(5, HIGH);
-    digitalWrite(6, HIGH);
-    digitalWrite(7, HIGH);
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-    digitalWrite(10, LOW);
-
-  } // if the temperature rises  7-8 degrees, turn 7 LEDs
-        else if (temperature >= baselineTemp + 7 && temperature < baselineTemp + 8) {
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
-    digitalWrite(5, HIGH);
-    digitalWrite(6, HIGH);
-    digitalWrite(7, HIGH);
-    digitalWrite(8, HIGH);
-    digitalWrite(9, LOW);
-    digitalWrite(10, LOW);
-
-  } // if the temperature rises 8-9 degrees, turn 8 LEDs
-  else if (temperature >= baselineTemp + 8 && temperature < baselineTemp + 9) {      
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
-    digitalWrite(5, HIGH);
-    digitalWrite(6, HIGH);
-    digitalWrite(7, HIGH);
-    digitalWrite(8, HIGH);
-    digitalWrite(9, HIGH);
-    digitalWrite(10, LOW);
+    digitalWrite(10, HIGH);
 
   } // if the temperature rises more than 6 degrees, turn all LEDs
-  else if (temperature >= baselineTemp + 9) {
+  else if (temperature >= baselineTemp + 15) {
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, HIGH);
